@@ -1,0 +1,55 @@
+.calculator .content {
+   padding: 25px; 	
+   width:500px;
+   height:400px;
+   webkit-border-radius: 15px;
+   -moz-border-radius: 15px;border-radius: 15px;
+   background-color:#8C76E3;
+   -webkit-box-shadow: #B3B3B3 10px 10px 10px;
+   -moz-box-shadow: #B3B3B3 10px 10px 10px; 
+   box-shadow: #B3B3B3 10px 10px 10px;
+   margin-left: 50px;
+  
+}
+
+.calculator .content input {
+  padding: 10px;
+  border: solid 1px #fff;
+  box-shadow: inset 1px 1px 2px 0 #707070;
+  transition: box-shadow 0.3s;
+}
+
+.calculator .content input:focus {
+	box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+}
+
+.calculator .content > div {
+	margin-bottom: 15px;
+}
+
+.calculator .content .btn {
+  background: #f0f3f5;
+  background-image: -webkit-linear-gradient(top, #f0f3f5, #eff1f2);
+  background-image: -moz-linear-gradient(top, #f0f3f5, #eff1f2);
+  background-image: -ms-linear-gradient(top, #f0f3f5, #eff1f2);
+  background-image: -o-linear-gradient(top, #f0f3f5, #eff1f2);
+  background-image: linear-gradient(to bottom, #f0f3f5, #eff1f2);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #7d7ade;
+  font-size: 14px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.calculator .content .btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}

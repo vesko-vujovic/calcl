@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculators</title>
+<meta charset="UTF-8">
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.validate.js"></script>
+<script type="text/javascript" src="calc.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<h1>Calculator</h1>
+<div class="calculator">
+	<div class="content">
+		<form id="myForm">
+			<div class="firstfield">
+			    <p>Iznos traženog kredita </p>
+				<input type="number" name="kredit" placeholder="5000 €">
+			</div>
+			<div class="secondfield">
+			    <p>Godišnja kamatna stopa</p>
+				<input type="number" name="stopa" placeholder="9.85%" step="any">
+			</div>
+			<div class="thirdfield">
+				<p>Period otplate</p>
+				<input type="number" name="otplata" placeholder="36 (mjeseci)">
+			</div>
+			<div>
+				<input type="submit" value="Izracunaj" class="btn">
+			</div>
+			<div class="results">
+			</div>
+		</form>
+	</div>
+</div>
+</body>
+</html>
