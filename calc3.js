@@ -57,47 +57,37 @@ $("#myForm").validate(
 
 // Calculate annual amount
 function calculateAnnual(iznos, kamata, otplata) {
-   var r 		= calculateR(kamata);
-   // R is param from function above, we need this to calculate c variable
-   var c  		= calculateC(r);
-   var r2 		= calculateR2(c);
-   var anuitet  = calculateAnuitet(iznos, otplata, r2);
+   var koef 		= calculateKoef(kamata);
+   var x        = calculateX(koef, otplata);
+   var anuitet  = calculateAnuitet(iznos, x, koef);
    var total    = calculateTotal(anuitet, otplata);
    $('.results').empty();
    displayResults(anuitet, total);
+   
+   //displayResults( total);
 };
 
-function calculateR(r) {
-	var r = 1+(r / 100);
-	return r;
+function calculateKoef(kamata) {
+	var koef  = kamata / 1200;
+	return koef;
 };
 
-function calculateC(r) {
-	var x = 1 / 12;
-	var y = Math.pow(r, x);
-	y = (y-1) * 100;
-
+function calculateX(koef, otplata) {
+	var x = (1 + koef)
+  var y = Math.pow(x, otplata);
 	return y
 };
 
-function calculateR2(c) {
-	var x = 1 + (c / 100);
-	return x;
-};
 
-function calculateAnuitet(iznos, otplata, r2) {
-	var x     = r2 - 1;
-	var y     = Math.pow(r2, otplata);
-	var total = iznos * (x * y) / (y - 1);
-        total = parseFloat(total.toFixed(2));
+function calculateAnuitet(iznos, x, koef) {
 
-	return total;
+  var anuitet  = (iznos * x / (x - 1) * koef * 100) / 100; 
+	return parseFloat(anuitet.toFixed(2));
 }
 
 function calculateTotal(anuitet, otplata) {
 	var total = anuitet * otplata;
 	    total = parseFloat(total.toFixed(2));
-
 	return total;
 }
 
@@ -105,23 +95,6 @@ function displayResults(anuitet, total) {
 	$('.results').append('<p> Vaša mjesecna rata iznosi:' + anuitet +'€' + '</p>');
 	$('.results').append('<p> Ukupno:' + total + '€' + '</p>')
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 });
