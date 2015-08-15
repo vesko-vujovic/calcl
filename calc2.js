@@ -105,22 +105,4 @@ function displayResults(anuitet, total) {
 	$('.results').append('<p> Ukupno:' + total + '€' + '</p>')
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
